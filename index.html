@@ -37,10 +37,13 @@
   <p>ضغط على الزر باش تبدا الدردشة:</p>
   <button id="start-chat">بدا الدردشة</button>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 
+  <script>
     // تهيئة Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyBXqW_gBbJb9z0mzadUgEHbmTIn6N12u_8",
@@ -52,10 +55,13 @@
       measurementId: "G-TQCMF1TRME"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.getAnalytics(app);
+    const auth = firebase.getAuth(app);
+    const database = firebase.getDatabase(app);
 
-    // دير تفاعل مع الزر
+    // تفاعل مع الزر
     const startChatButton = document.getElementById("start-chat");
     startChatButton.addEventListener("click", () => {
       alert("الدردشة غادي تبدا!");
