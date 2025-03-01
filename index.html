@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majhoul - دردشة مجهولة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Majhoul - دردشة مجهولة</h1>
+  <p>ضغط على الزر باش تبدا الدردشة:</p>
+  <button id="start-chat">بدا الدردشة</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+    // تهيئة Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBXqW_gBbJb9z0mzadUgEHbmTIn6N12u_8",
+      authDomain: "majhoul-b5014.firebaseapp.com",
+      projectId: "majhoul-b5014",
+      storageBucket: "majhoul-b5014.appspot.com",
+      messagingSenderId: "144722693330",
+      appId: "1:144722693330:web:0b41fec18aa3cf7960b10b",
+      measurementId: "G-TQCMF1TRME"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // دير تفاعل مع الزر
+    const startChatButton = document.getElementById("start-chat");
+    startChatButton.addEventListener("click", () => {
+      alert("الدردشة غادي تبدا!");
+    });
+  </script>
+</body>
+</html>
